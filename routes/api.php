@@ -29,9 +29,8 @@ Route::group(['prefix' => 'v1'], function(){
         });
 
         #### Tweet routes #####
-        Route::prefix('tweets')->group(function () {
-            Route::post('/store', 'TweetController@store')->name('tweet.store');
-        });
+        Route::resource('/tweets', 'TweetController');
+
 
         #### User routes #####
         Route::prefix('user')->group(function () {

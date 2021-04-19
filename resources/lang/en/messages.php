@@ -19,6 +19,7 @@ return [
     'incorrect_email_or_password' => 'Incorrect email or password',
     'request_not_found' => 'Request not found',
     'followed_successfully' => 'Followed successfully',
+    'already_followed' => 'Already Followed',
     'too_many_requests' => 'Too many requests please wait 30 mins and try again',
 
 ];

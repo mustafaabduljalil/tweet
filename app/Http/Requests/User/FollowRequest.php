@@ -28,8 +28,12 @@ class FollowRequest extends FormRequest
             'following_id' => [
                 'required',
                 'numeric',
-                'exists:users,id',
-                Rule::notIn([auth()->id()]), // prevent user follow himself
+                Rule::notIn([auth()->id()]),
+                function ($attribute, $value, $fail) {
+                    if (in_array($value,auth()->user()->following()->pluck('following_id')->toArray())) {
+                        $fail('Already followed');
+                    }
+                },
             ],
         ];
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Tweet\CreateRequest;
+use App\Http\Requests\Tweet\CreateTweetRequest;
 use App\Http\Resources\Tweet\TweetResource;
 use App\Services\TweetService;
 
@@ -21,7 +21,7 @@ class TweetController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return object
      */
-    public function store(CreateRequest $request)
+    public function store(CreateTweetRequest $request)
     {
         return new TweetResource($this->tweetService->store($request->validated()));
     }

@@ -20,7 +20,7 @@ class TweetTest extends TestCase
         $token = $user->createToken("tweet")->plainTextToken;
 
         $response = $this->withHeader('Authorization', 'Bearer ' . $token)
-                        ->json('POST', 'api/v1/tweets/store', $tweet, ['Accept' => 'application/json'])
+                        ->json('POST', 'api/v1/tweets', $tweet, ['Accept' => 'application/json'])
                         ->assertStatus(201)
                             ->assertJsonStructure([
                                 "data" => [

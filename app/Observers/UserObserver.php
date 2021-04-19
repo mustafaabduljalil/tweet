@@ -2,7 +2,6 @@
 
 namespace App\Observers;
 
-use App\Http\Controllers\HelperController;
 use App\Services\UploadImageService;
 use App\User;
 

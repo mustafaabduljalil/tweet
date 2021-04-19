@@ -146,6 +146,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'following_id' => 'Following id'
+    ],
 
 ];

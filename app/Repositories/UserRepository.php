@@ -51,7 +51,7 @@ class UserRepository
      */
     public function follow($request)
     {
-        return $request->user()->following()->sync($request->following_id);
+        return $request->user()->following()->attach($request->following_id);
     }
 
 
